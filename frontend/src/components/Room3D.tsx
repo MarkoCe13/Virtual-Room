@@ -1,0 +1,1 @@
+//Prikaz sobe in pohištva
