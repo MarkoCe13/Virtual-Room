@@ -1,15 +1,18 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
+require('dotenv').config();
+
 
 const firebaseConfig = {
-  apiKey: "AIzaSyDstCS9j8L3fZwHqbL6CDLa67VbiIwVBxA",
-  authDomain: "virtualroom-f6a57.firebaseapp.com",
-  projectId: "virtualroom-f6a57",
-  storageBucket: "virtualroom-f6a57.firebasestorage.app",
-  messagingSenderId: "184027486946",
-  appId: "1:184027486946:web:0aee27aa05f0182e811cbb",
-  measurementId: "G-G99BFM8G04"
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
+  authDomain: process.env.REACT_APP_FIREBASE_AUTH_DOMAIN,
+  projectId: process.env.REACT_APP_FIREBASE_PROJECT_ID,
+  storageBucket: process.env.REACT_APP_FIREBASE_STORAGE_BUCKET,
+  messagingSenderId: process.env.REACT_APP_FIREBASE_MESSAGING_SENDER_ID,
+  appId: process.env.REACT_APP_FIREBASE_APP_ID,
+  measurementId: process.env.REACT_APP_FIREBASE_MEASUREMENT_ID
 };
+
 
 const app = initializeApp(firebaseConfig);
 const analytics = getAnalytics(app);
