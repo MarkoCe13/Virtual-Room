@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import RoomInput from "../components/RoomInput";
-
+import Room3D from "../components/Room3D";
 
 interface RoomDimensions {
     width: string;
@@ -9,16 +9,13 @@ interface RoomDimensions {
 }
 
 const MainPage: React.FC = () => {
-    
     const [roomDimensions, setRoomDimensions] = useState<RoomDimensions>({
         width: '',
         length: '',
         height: '',
     });
 
-    
-    const handleRoomSubmit = async (dimensions: RoomDimensions) => {
-        
+    const handleRoomSubmit = (dimensions: RoomDimensions) => {
         setRoomDimensions(dimensions);
     };
 
@@ -32,6 +29,14 @@ const MainPage: React.FC = () => {
                 <p>Length: {roomDimensions.length}</p>
                 <p>Height: {roomDimensions.height}</p>
             </div>
+
+            
+            <Room3D 
+                width={parseFloat(roomDimensions.width)} 
+                length={parseFloat(roomDimensions.length)} 
+                height={parseFloat(roomDimensions.height)} 
+                furniture={null} 
+            />
         </div>
     );
 };

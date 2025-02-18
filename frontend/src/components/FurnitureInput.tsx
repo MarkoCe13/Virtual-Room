@@ -17,14 +17,13 @@ const FurnitureInput: React.FC<FurnitureInputProps> = ({ onFurnitureSubmit }) =>
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        
+         
         const scrapedDimensions: FurnitureDimensions = {
             width: '100', 
             length: '200', 
             height: '50', 
         };
 
-        
         onFurnitureSubmit(scrapedDimensions);
     };
 
